@@ -1,4 +1,17 @@
-# Azure Data Platform End2End
+
+# Azure End-to-End Big Data
+
+Dave Wentzel  
+Microsoft MTC Architect: Data & AI  
+linkedin.com/in/dwentzel  
+
+Get Started NOW:  
+
+* `git clone https://github.com/`
+* **To get everyone started quickly, begin deploying the Azure infrastructure as soon as you can.**  See [Lab Deployment](./Deploy/Deploy.md).  
+  * Use `US East`, not `US East2`
+
+## Background
 
 In this workshop you will learn the main concepts related to advanced analytics and Big Data processing and how Azure Data Services can be used to implement a modern data warehouse architecture. You will understand what Azure services you can leverage to establish a solid data platform to quickly ingest, process and visualise data from a large variety of data sources. The reference architecture you will build as part of this exercise has been proven to give you the flexibility and scalability to grow and handle large volumes of data and keep an optimal level of performance.
 
@@ -25,23 +38,9 @@ Throughout a series of 5 labs you will progressively implement the modern data p
 
 ![](./Media/LabArchitecture.jpg)
 
-### Lab Deployment
-
-Click [here](./Deploy/Deploy.md) and follow the instructions to deploy the Azure Data Services required by labs 1 through to 5.
+### [Lab Deployment](./Deploy/Deploy.md)
 
 ### [Lab 1: Load Data into Azure SQL Data Warehouse using Azure Data Factory Pipelines](./Lab/Lab1/Lab1.md)
-
-In this lab you will configure the Azure environment to allow relational data to be transferred from a SQL Server 2017 database to an Azure SQL Data Warehouse database using Azure Data Factory. The dataset you will use contains data about motor vehicle collisions that happened in New York City from 2012 to 2019. You will use Power BI to visualise collision data loaded from Azure SQL Data Warehouse.
-
-The estimated time to complete this lab is: **60 minutes**.
-
-Step     | Description
--------- | -----
-![1](./Media/Black1.png) | Restore SQL Server backup from Azure Storage and Configure Azure Data Factory Self-Hosted Integration Runtime
-![2](./Media/Black2.png) | Build an Azure Data Factory Pipeline to copy data from a SQL Server table
-![3](./Media/Black3.png) | Use Azure Storage as a staging area for Polybase
-![4](./Media/Black4.png) | Load data to an Azure SQL Data Warehouse table using Polybase
-![5](./Media/Black5.png) | Visualize data from Azure SQL Data Warehouse using Power BI
 
 ### [Lab 2: Transform Big Data using Azure Data Factory and Azure SQL Data Warehouse](./Lab/Lab2/Lab2.md)
 In this lab you will use Azure Data Factory to download large data files into your data lake and use an Azure SQL Data Warehouse stored procedure to generate a summary dataset and store it in the final table. The dataset you will use contains detailed New York City Yellow Taxi rides for 2018. You will generate a daily aggregated summary of all rides and save the result in your data warehouse. You will then use Power BI to visualise summarised data. 
