@@ -1,5 +1,7 @@
 create schema [Staging]
 go
+create schema [NYC]
+GO
 
 create table [Staging].[NYCTaxiData]
 (

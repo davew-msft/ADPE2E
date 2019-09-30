@@ -1,15 +1,18 @@
 
-# Azure End-to-End Big Data
+# Azure End-to-End Big Data - One Day Event
 
 Dave Wentzel  
 Microsoft MTC Architect: Data & AI  
 linkedin.com/in/dwentzel  
 
-Get Started NOW:  
+## Agenda 
 
-* `git clone https://github.com/`
+Get Started as soon as possible:  
+
+* `git clone https://github.com/davew-msft/ADPE2E`
 * **To get everyone started quickly, begin deploying the Azure infrastructure as soon as you can.**  See [Lab Deployment](./Deploy/Deploy.md).  
   * Use `US East`, not `US East2`
+  * **If you get a failure message during deployment, let me know immediately**
 
 ## Background
 
@@ -28,7 +31,7 @@ New York City data used in this lab was obtained from the [New York City Open Da
 ## Lab Prerequisites and Deployment
 The following prerequisites must be completed before you start these labs:
 
-* You must have an Azure account with administrator- or controbutor-level access to your subscription. If you don’t have an account, you can sign up for free following the instructions here: https://azure.microsoft.com/en-au/free/
+* You must have an Azure account with administrator- or contributor-level access to your subscription. If you don’t have an account, you can sign up for free following the instructions here: https://azure.microsoft.com/en-au/free/
 * Lab 5 requires you to have a Twitter account. If you don’t have an account you can sign up for free following the instructions here: https://twitter.com/signup. 
 * Lab 5 requires you to have a Power BI Pro account. If you don’t have an account you can sign up for a 60-day trial for free here: https://powerbi.microsoft.com/en-us/power-bi-pro/
 
@@ -42,27 +45,16 @@ Throughout a series of 5 labs you will progressively implement the modern data p
 
 ### [Lab 1: Load Data into Azure SQL Data Warehouse using Azure Data Factory Pipelines](./Lab/Lab1/Lab1.md)
 
+This lab sets up the basic tooling needed to complete the remaining labs.  
+
 ### [Lab 2: Transform Big Data using Azure Data Factory and Azure SQL Data Warehouse](./Lab/Lab2/Lab2.md)
-In this lab you will use Azure Data Factory to download large data files into your data lake and use an Azure SQL Data Warehouse stored procedure to generate a summary dataset and store it in the final table. The dataset you will use contains detailed New York City Yellow Taxi rides for 2018. You will generate a daily aggregated summary of all rides and save the result in your data warehouse. You will then use Power BI to visualise summarised data. 
 
-The estimated time to complete this lab is: **45 minutes**.
+In this lab we will copy csv files from the NYC Taxi dataset to our local data lake and SQL Data Warehouse.  We'll use Azure Data Factory to orchestrate a pipeline to do this.  
 
- 
-Step     | Description
--------- | -----
-![](./Media/Green1.png) | Build an Azure Data Factory Pipeline to copy big data files from shared Azure Storage
-![](./Media/Green2.png) | Save data files to your data lake
-![](./Media/Green3.png) | Use Polybase to load data into staging tables in your Azure SQL Data Warehouse. Call a Stored Procedure to perform data aggregations and save results in the final table.
-![](./Media/Green4.png) | Visualize data from your Azure SQL Data Warehouse using Power BI
+### [Lab 3: Explore Big Data using Azure Databricks](./Lab/Lab3/Lab3.md) 
 
-### [Lab 3: Explore Big Data using Azure Databricks](./Lab/Lab3/Lab3.md)
 In this lab you will use Azure Databricks to explore the New York Taxi data files you saved in your data lake in Lab 2. Using a Databricks notebook you will connect to the data lake and query taxi ride details. 
 
-The estimated time to complete this lab is: **20 minutes**.
-
-Step     | Description
--------- | -----
-![](./Media/Red1.png) |Build an Azure Databricks notebook to explore the data files you saved in your data lake in the previous exercise. You will use Python and SQL commands to open a connection to your data lake and query data from data files.
 
 ### [Lab 4: Add AI to your Big Data Pipeline with Cognitive Services](./Lab/Lab4/Lab4.md)
 In this lab you will use Azure Data Factory to download New York City images to your data lake. Then, as part of the same pipeline, you are going to use an Azure Databricks notebook to invoke Computer Vision Cognitive Service to generate metadata documents and save them in back in your data lake. The Azure Data Factory pipeline then finishes by saving all metadata information in a Cosmos DB collection. You will use Power BI to visualise NYC images and their AI-generated metadata.

@@ -13,10 +13,6 @@ Step     | Description
 ## Create Azure Databricks Cluster 
 In this section you are going to create an Azure Databricks cluster that will be used to execute notebooks.
 
-**IMPORTANT**|
--------------|
-**Execute these steps on your host computer**|
-
 1.	In the Azure Portal, navigate to the MDW-Lab resource group and locate the Azure Databricks resource MDWDatabricks-*suffix*.
 2.	On the **MDWDatabricks-*suffix*** blade, click the **Launch Workspace** button. The Azure Databricks portal will open on a new browser tab.
 
@@ -27,17 +23,13 @@ In this section you are going to create an Azure Databricks cluster that will be
 
     ![](./Media/Lab3-Image03.png)
 
-5.	On the Create Cluster blade, type “MDWDatabricksCluster” in the **Cluster Name** field. Leave all other fields with their default values.
+5.	On the Create Cluster blade, type `MDWDatabricksCluster` in the **Cluster Name** field. Leave all other fields with their default values.
 6.	Click **Create Cluster**. It should take around 5 minutes for the cluster to be fully operational.
 
     ![](./Media/Lab3-Image04.png)
 
 ## Create an Azure Databricks Notebook 
 In this section you are going to create an Azure Databricks notebook that will be used to explore the taxi data files you copied to your data lake in the Lab 2. 
-
-**IMPORTANT**|
--------------|
-**Execute these steps on your host computer**|
 
 1.	On the Azure Databricks portal, click the **Home** button on the left-hand side menu. 
 2.	On the **Workspace** blade, click the down arrow next to your user name and then click **Create > Notebook**.
@@ -51,7 +43,7 @@ In this section you are going to create an Azure Databricks notebook that will b
     ![](./Media/Lab3-Image06.png)
 
 6.	On the **Cmd 1** cell, click the **Edit** button on the top right-hand corner of the cell and then click **Show Title**.
-7.	Type “Setup connection to MDWDataLake storage account” in the cell title.
+7.	Type `Setup connection to MDWDataLake storage account` in the cell title.
 
     ![](./Media/Lab3-Image07.png)
     ![](./Media/Lab3-Image08.png)
@@ -63,17 +55,21 @@ In this section you are going to create an Azure Databricks notebook that will b
 9.	Use the Python code below and replace *[your MDWDataLake storage account name]* with **mdwdatalake*suffix*** and to replace *[your MDWDataLake storage account key]* with the storage account key.
 
 ```python
-spark.conf.set(
-  "fs.azure.account.key.[your MDWDataLake storage account name].blob.core.windows.net",
-  "[your MDWDataLake storage account key]")
+## vars to change
+acctname = "mdwdatalakeg3sve"
+acctkey = "/A2mGb+x4ZLpy1pGV4JzYA0YgQZ6gV0SaSFeIjvdhXcwTkQIzAwtYP5goo2vW6dYa1i1Ng9hLWwOiKv7XUxDIQ=="
+
+fullacctname = "fs.azure.account.key." + acctname + ".blob.core.windows.net"
+wasbs_location = "wasbs://nyctaxidata@" + acctname + ".blob.core.windows.net/"
+spark.conf.set(fullacctname, acctkey)
 
 ```
 
 10.	Press **Shift + Enter** to execute and create a new notebook cell. 
-Set the title of the **Cmd 2** cell to “Define NYCTaxiData schema and load data into a Data Frame”
+Set the title of the **Cmd 2** cell to `Define NYCTaxiData schema and load data into a Data Frame`
 
 11.	In the **Cmd 2** cell, define a new **StructType** object that will contain the definition of the data frame schema.
-12.	Using the schema defined above, initialise a new data frame by invoking the Spark API to read the contents of the nyctaxidata container in the MDWDataLake storage account. Use the Python code below:
+12.	Using the schema defined above, initialize a new data frame by invoking the Spark API to read the contents of the nyctaxidata container in the MDWDataLake storage account. Use the Python code below:
 
 ```python
 from pyspark.sql.types import *
@@ -97,23 +93,16 @@ nycTaxiDataSchema = StructType([
   , StructField("improvement_surcharge",DoubleType(),True)
   , StructField("total_amount",DoubleType(),True)])
   
-dfNYCTaxiData = spark.read.format('csv').options(header='true', schema=nycTaxiDataSchema).load('wasbs://nyctaxidata@[your MDWDataLake storage account name].blob.core.windows.net/')
+dfNYCTaxiData = spark.read.format('csv').options(header='true', schema=nycTaxiDataSchema).load(wasbs_location)
 ```
 
-13.	Remember to replace *[your MDWDataLake storage account name]* with **mdwdatalake*suffix*** and to replace *[your MDWDataLake storage account key]* with the storage account key. Your **Cmd 2** cell should look like this:
-
-    ![](./Media/Lab3-Image09.png)
-
 14.	Hit **Shift + Enter** to execute the command and create a new cell. 
-15.	Set the title of the **Cmd 3** cell to “Display Data Frame Content”.
-16.	In the **Cmd 3** cell, call the display function to show the contents of the data frame dfNYCTaxiData. Use the Python code below:
+15.	Set the title of the **Cmd 3** cell to `Display Data Frame Content` with code:  
 
 ```python
 display(dfNYCTaxiData)
 ```
-17.	Hit **Shift + Enter** to execute the command and create a new cell. You will see a data grid showing the top 1000 records from the dataframe:
-
-    ![](./Media/Lab3-Image10.png)
+17.	Hit **Shift + Enter** to execute the command and create a new cell. You will see a data grid showing the top 1000 records from the dataframe
 
 18.	Set the title of the **Cmd 4** cell to “Create Temp View”
 19.	In the **Cmd 4** cell, call the **createOrReplaceTempView** method of the data frame object to create a temporary view of the data in memory. Use the Python code below:
@@ -134,10 +123,6 @@ dfNYCTaxiData.createOrReplaceTempView('NYCTaxiDataTable')
 select count(*) from NYCTaxiDataTable
 ```
 
-24.	Hit **Shift + Enter** to execute the command and create a new cell. You will see the total number of records in the data frame at the bottom of the cell.
-
-    ![](./Media/Lab3-Image11.png)
-
 25.	Set the title of the **Cmd 6** cell to “Use SQL to filter NYC Taxi Data records”
 
 26.	In the **Cmd 6** cell, write a SQL query to filter taxi rides that happened on the Apr, 7th 2018 that had more than 5 passengers. Use the command below:
@@ -153,10 +138,6 @@ from NYCTaxiDataTable
 where cast(tpep_pickup_datetime as date) = '2018-04-07'
   and passenger_count > 5
 ```
-
-27.	Hit **Shift + Enter** to execute the command. You will see a grid showing the filtered result set.
-
-    ![](./Media/Lab3-Image12.png)
 
 28.	Set the title of the **Cmd 7** cell to “Use SQL to aggregate NYC Taxi Data records and visualize data”
 
