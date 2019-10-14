@@ -9,7 +9,7 @@ linkedin.com/in/dwentzel
 
 Get Started as soon as possible:  
 
-* `git clone https://github.com/davew-msft/ADPE2E`
+* `git clone https://github.com/davew-msft/AzDataPlat`
 * **To get everyone started quickly, begin deploying the Azure infrastructure as soon as you can.**  See [Lab Deployment](./Deploy/Deploy.md).  
   * Use `US East`, not `US East2`
   * **If you get a failure message during deployment, let me know immediately**
@@ -49,11 +49,11 @@ This lab sets up the basic tooling needed to complete the remaining labs.
 
 ### [Lab 2: Transform Big Data using Azure Data Factory and Azure SQL Data Warehouse](./Lab/Lab2/Lab2.md)
 
-In this lab we will copy csv files from the NYC Taxi dataset to our local data lake and SQL Data Warehouse.  We'll use Azure Data Factory to orchestrate a pipeline to do this.  
+In this lab we will copy csv files from the NYC Taxi dataset to our local data lake and SQL Data Warehouse.  We'll use Azure Data Factory to orchestrate a pipeline to do this.  *This lab requires completion of the previous labs.*
 
 ### [Lab 3: Explore Big Data using Azure Databricks](./Lab/Lab3/Lab3.md) 
 
-In this lab you will use Azure Databricks to explore the New York Taxi data files you saved in your data lake in Lab 2. Using a Databricks notebook you will connect to the data lake and query taxi ride details. 
+In this lab you will use Azure Databricks to explore the New York Taxi data files you saved in your data lake in Lab 2. Using a Databricks notebook you will connect to the data lake and query taxi ride details. *This lab requires completion of the previous labs.*
 
 
 ### [Lab 4: Add AI to your Big Data Pipeline with Cognitive Services](./Lab/Lab4/Lab4.md)
