@@ -5,6 +5,8 @@ Dave Wentzel
 Microsoft MTC Architect: Data & AI  
 linkedin.com/in/dwentzel  
 
+**this branch is the 2day event, which is a copy of master branch**
+
 Get Started NOW:  
 
 * `git clone https://github.com/`
