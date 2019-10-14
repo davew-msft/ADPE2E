@@ -10,18 +10,22 @@ Step     | Description
 -------- | -----
 ![](./Media/Red1.png) |Build an Azure Databricks notebook to explore the data files you saved in your data lake in the previous exercise. You will use Python and SQL commands to open a connection to your data lake and query data from data files.
 
+Azure Databricks (dbx) is a Spark-as-a-Service offering.  Spark is a "big data" tool that allows you to perform ETL, streaming data, analytics, and machine learning from a notebook-like (think Jupyter notebook) experience.  The most proficient dbx users tend to know Python, Scala, or SQL.  
+
+For this lab we are only going to do the most basic queries with dbx to give you a feel for the Art of the Possible.  
+
 ## Create Azure Databricks Cluster 
 In this section you are going to create an Azure Databricks cluster that will be used to execute notebooks.
 
 1.	In the Azure Portal, navigate to the MDW-Lab resource group and locate the Azure Databricks resource MDWDatabricks-*suffix*.
-2.	On the **MDWDatabricks-*suffix*** blade, click the **Launch Workspace** button. The Azure Databricks portal will open on a new browser tab.
+2.	On the **MDWDatabricks-*suffix*** blade, click the **Launch Workspace** button. The Azure Databricks portal will open on a new browser tab.  
 
-    ![](./Media/Lab3-Image02.png)
+This is a Databricks Workspace which allows you to create one-to-many dbx clusters, create/save/share notebooks, and connect to common services like data lakes and databases.  
 
 3.	On the Azure Databricks portal, click the **Clusters** button on the left-hand side menu. 
 4.	On the **Clusters** blade, click **+ Create Cluster**.
 
-    ![](./Media/Lab3-Image03.png)
+You can have multiple clusters in a workspace.  One cluster may be setup and scaled for streaming data, one for batch jobs that require more horsepower for data engineering, and one for ad hoc analytics.  
 
 5.	On the Create Cluster blade, type `MDWDatabricksCluster` in the **Cluster Name** field. Leave all other fields with their default values.
 6.	Click **Create Cluster**. It should take around 5 minutes for the cluster to be fully operational.

@@ -27,8 +27,11 @@ MDWKeyVault-*suffix*	     |Key vault
 mdwsqlvirtualserver-*suffix* |SQL server
 MDWStreamAnalytics-*suffix*	 |Stream Analytics job
 
+**What is your suffix?**  
+suffix:  `suffix here`
+
 ## Connect to MDWDesktop
-In this section you are going to establish a Remote Desktop Connection to MDWDesktop virtual machine.
+In this section you are going to establish a Remote Desktop Connection to MDWDesktop virtual machine.  This Azure VM is where we will install Azure Data Studio and Power BI.  
 
 **IMPORTANT**|
 -------------|
@@ -66,8 +69,16 @@ In this section you are going to install Power BI Desktop and Azure Data Studio 
     <br>**Azure Data Studio (User Installer)**
     <br>https://docs.microsoft.com/en-us/sql/azure-data-studio/download
     <br>
+    we will use this to query the data.  You could also download SSMS instead, if that is more familiar for you.  
     <br>
     <br>**Power BI Desktop (64-bit)**
     <br>https://www.microsoft.com/en-us/download/details.aspx?id=45331
+    <br>
+    we will use this for visualization and querying
+    <br>
+    <br>**Azure Storage Explorer**
+    <br>https://azure.microsoft.com/en-us/features/storage-explorer/
+    <br>
+    we can use this to connect to our source datasets to understand how they are laid out in their storage account 
     <br>
 
