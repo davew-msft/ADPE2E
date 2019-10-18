@@ -23,6 +23,16 @@ In the exercises in this lab you will build data pipelines using data related to
 
 ![](./Media/ModernDataPlatformReferenceArchitecture.jpg)
 
+
+## Cloud Shell setup
+
+Get-AzureRmSubscription 
+Select-AzureRmSubscription -Subscription "name"
+New-AzResourceGroupDeployment -ResourceGroupName MDW-Lab -TemplateUri https://raw.githubusercontent.com/davew-msft/AzDataPlat/master/Deploy/azuredeploy.json
+
+https://github.com/davew-msft/AzDataPlat
+
+
 ## Data Source References
 New York City data used in this lab was obtained from the [New York City Open Data website](https://opendata.cityofnewyork.us/). The following datasets were used:
 
