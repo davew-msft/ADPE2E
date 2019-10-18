@@ -188,7 +188,7 @@
                     "dnsServers": [],
                     "appliedDnsServers": []
                 },
-                "enableAcceleratedNetworking": true,
+                "enableAcceleratedNetworking": false,
                 "enableIPForwarding": false,
                 "primary": true,
                 "tapConfigurations": []
@@ -322,7 +322,7 @@
                     "dnsServers": [],
                     "appliedDnsServers": []
                 },
-                "enableAcceleratedNetworking": true,
+                "enableAcceleratedNetworking": false,
                 "enableIPForwarding": false,
                 "primary": true,
                 "tapConfigurations": []

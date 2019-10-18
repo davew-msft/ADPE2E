@@ -55,7 +55,8 @@ In this section you will connect to Azure SQL Data Warehouse to create the datab
     <br>- **User Name**: mdwadmin
     <br>- **Password**: P@ssw0rd123!
     <br>- **Database**: MDWASQLDW
-1. Open a query window and Execute the [full solution script](Solution/Create Staging NYCTaxiData.sql).  
+
+Open a query window and Execute the <a href="Solution/Create Staging NYCTaxiData.sql">full solution script</a>
 
 
 ### Questions

@@ -1,5 +1,9 @@
 ## One Day Course Setup Instructions
 
+1. azuredeploy.json does not work reliably in Free Trial accounts.  Need to test it
+2. does not deploy with accelerated networking...fixed, needs to be tested
+
+
 ## Workshop Shared Resources
 
 This is our data vendor's storage account:
