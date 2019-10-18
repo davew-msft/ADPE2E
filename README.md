@@ -26,11 +26,12 @@ In the exercises in this lab you will build data pipelines using data related to
 
 ## Cloud Shell setup
 
-Get-AzureRmSubscription 
-Select-AzureRmSubscription -Subscription "name"
-New-AzResourceGroupDeployment -ResourceGroupName MDW-Lab -TemplateUri https://raw.githubusercontent.com/davew-msft/AzDataPlat/master/Deploy/azuredeploy.json
+Get-AzureRmSubscription   
+Select-AzureRmSubscription -Subscription "name"  
+New-AzResourceGroupDeployment -ResourceGroupName MDW-Lab -TemplateUri https://raw.githubusercontent.com/davew-msft/AzDataPlat/master/Deploy/azuredeploy.json  
 
-https://github.com/davew-msft/AzDataPlat
+https://github.com/davew-msft/AzDataPlat  
+master  
 
 
 ## Data Source References
