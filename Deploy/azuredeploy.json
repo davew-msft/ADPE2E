@@ -11,10 +11,10 @@
         "MDWAdminUserName":"mdwadmin",
         "MDWAdminPassword":"P@ssw0rd123!",
 
-        "SQLServerVMSize":"Standard_D4s_v3",
-        "DataGatewayVMSize":"Standard_D4s_v3",
-        "DesktopVMSize":"Standard_A4_v2",
-        "AzureSQLDWSize":"DW200c",
+        "SQLServerVMSize":"Standard_A1_v2",
+        "DataGatewayVMSize":"Standard_A1_v2",
+        "DesktopVMSize":"Standard_A1_v2",
+        "AzureSQLDWSize":"DW100c",
 
         "UniqueSuffix":"[uniqueString(resourceGroup().id)]",
 
