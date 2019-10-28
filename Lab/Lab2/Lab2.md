@@ -98,7 +98,7 @@ For this lab we need to create Linked Services for:
 * The destination datalake to hold our unaltered csvs
 * The SQL DW where we will copy some of our data for later analytics.  
 
-1.	On the **New Linked Service (Azure Blob Storage)** blade, enter the following details.  (This is our data vendor's storage account):
+1.	On the **New Linked Service (Azure Blob Storage)** blade (this is under "Connections" near the bottom of the ADF screen), enter the following details.  (This is our data vendor's storage account):
     <br>- **Name**: NYCTaxiDataVendor
     <br>- **Connect via integration runtime**: AutoResolveIntegrationRuntime
     <br>- **Authentication method**: SAS URI

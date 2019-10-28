@@ -7,14 +7,6 @@ The estimated time to complete this lab is: **60 minutes**.
 ## Lab Architecture
 ![Lab Architecture](./Media/Lab1-Image01.png)
 
-Step     | Description
--------- | -----
-![1](./Media/Black1.png) | Restore SQL Server backup from Azure Storage and Configure Azure Data Factory Self-Hosted Integration Runtime
-![2](./Media/Black2.png) | Build an Azure Data Factory Pipeline to copy data from a SQL Server table
-![3](./Media/Black3.png) | Use Azure Storage as a staging area for Polybase
-![4](./Media/Black4.png) | Load data to an Azure SQL Data Warehouse table using Polybase
-![5](./Media/Black5.png) | Visualize data from Azure SQL Data Warehouse using Power BI
-
 **IMPORTANT**: Some of the Azure services provisioned require globally unique name and a “-suffix” has been added to their names to ensure this uniqueness. Please take note of the suffix generated as you will need it for the following resources:
 
 Name	                     |Type
